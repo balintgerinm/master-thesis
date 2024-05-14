@@ -8,27 +8,26 @@
 \input{include/packages}
 
 %TODO Set the main variables
-\newcommand{\vikszerzoVezeteknev}{Gipsz}
-\newcommand{\vikszerzoKeresztnev}{Jakab}
+\newcommand{\vikszerzoVezeteknev}{Bálint}
+\newcommand{\vikszerzoKeresztnev}{Gergő}
 
-\newcommand{\vikkonzulensAMegszolitas}{dr.~}
-\newcommand{\vikkonzulensAVezeteknev}{Konzulens}
-\newcommand{\vikkonzulensAKeresztnev}{Egy}
+\newcommand{\vikkonzulensBMegszolitas}{Dr.~}
+\newcommand{\vikkonzulensBVezeteknev}{Szűcs}
+\newcommand{\vikkonzulensBKeresztnev}{Gábor}
 
-\newcommand{\vikkonzulensBMegszolitas}{}
-\newcommand{\vikkonzulensBVezeteknev}{Konzulens}
-\newcommand{\vikkonzulensBKeresztnev}{Kettő}
+\newcommand{\vikkonzulensAMegszolitas}{}
+\newcommand{\vikkonzulensAVezeteknev}{Kiss}
+\newcommand{\vikkonzulensAKeresztnev}{Richárd}
 
 \newcommand{\vikkonzulensCMegszolitas}{}
 \newcommand{\vikkonzulensCVezeteknev}{}
 \newcommand{\vikkonzulensCKeresztnev}{}
 
-\newcommand{\vikcim}{Elektronikus terelők} % Cím
+\newcommand{\vikcim}{Investigating graph-based representation learning and developing a new inductive method} % Cím
 \newcommand{\viktanszek}{\bmemit} % Tanszék
-\newcommand{\vikdoktipus}{\bsc} % Dokumentum típusa (\bsc vagy \msc)
-\newcommand{\vikmunkatipusat}{szakdolgozatot} % a "hallgató nyilatkozat" részhez: szakdolgozatot vagy diplomatervet
+\newcommand{\vikdoktipus}{\msc} % Dokumentum típusa (\bsc vagy \msc)
+\newcommand{\vikmunkatipusat}{diplomatervet} % a "hallgató nyilatkozat" részhez: szakdolgozatot vagy diplomatervet
 
-\input{include/tdk-variables}
 \newcommand{\szerzoMeta}{\vikszerzoVezeteknev{} \vikszerzoKeresztnev} % egy szerző esetén
 %\newcommand{\szerzoMeta}{\vikszerzoVezeteknev{} \vikszerzoKeresztnev, \tdkszerzoB} % két szerző esetén
 
@@ -49,17 +48,16 @@
 
 %TODO These includes define guidelines -- remove these
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\include{include/guideline}
-\include{include/project}
+%\include{include/guideline}
+%\include{include/project}
 
 \selectthesislanguage
 
 %TODO Titlepage -- choose one from below
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \include{include/titlepage}		   % Szakdolgozat/Diplomaterv címlap
-%\include{include/titlepage-tdk}	% TDK címlap
-%\include{include/titlepage-otdk}   % OTDK címlap
 
+\includepdf[pages=-]{figures/feladatkiiras.pdf}
 
 % Table of Contents
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,14 +76,16 @@
 
 %TODO import your own content
 \include{content/introduction}
-\include{content/latex-tools}
-\include{content/thesis-format}
-\include{content/template-usage}
-
+\include{content/graph-neural-networks-representation-learning}
+\include{content/isne}
+\include{content/noise-estimation}
+\include{content/density-estimation}
+\include{content/explainability}
+\include{content/summary}
 
 % Acknowledgements
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\include{content/acknowledgement}
+%\include{content/acknowledgement}
 
 
 % List of Figures, Tables
