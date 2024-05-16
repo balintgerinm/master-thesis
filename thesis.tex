@@ -2,7 +2,7 @@
 % !TeX encoding = UTF-8
 % !TeX program = xelatex
 % TODO Change language to en_GB (recommended) or en_US for English documents
-\documentclass[11pt,a4paper,oneside]{report}             % Single-side
+\documentclass[12pt,a4paper,oneside]{report}             % Single-side
 %\documentclass[11pt,a4paper,twoside,openright]{report}  % Duplex
 
 \input{include/packages}
@@ -42,6 +42,8 @@
 %--------------------------------------------------------------------------------------
 % Table of contents and the main text
 %--------------------------------------------------------------------------------------
+\interfootnotelinepenalty=1000
+
 \begin{document}
 
 \pagenumbering{gobble}
@@ -97,8 +99,8 @@
 % Bibliography
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{unsrt}
 \bibliography{bib/mybib}
-
 
 % Appendix
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

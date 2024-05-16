@@ -5,17 +5,55 @@
 
 \section{Graph neural networks}
 %----------------------------------------------------------------------------
-TODO [1 oldal]
 
-általános leírás
+Graph Neural Networks (GNNs) are a class of neural networks designed to process and analyze graph-structured data. Unlike traditional neural networks that operate on Euclidean data such as images and text, GNNs work on data represented as graphs, which can capture complex relationships between entities. The importance of GNNs stems from the ubiquity of graph-structured data in various domains:
+
+\begin{itemize}
+    \item \emph{Social Networks:} where nodes represent individuals and edges represent relationships or interactions.
+    \item \emph{Biological Networks:} such as protein-protein interaction networks, where nodes represent proteins and edges represent interactions.
+    \item \emph{Knowledge Graphs:} where nodes represent entities and edges represent relationships between them.
+    \item \emph{Infrastructure Networks:} such as transportation and communication networks.
+\end{itemize}
+
+GNNs leverage the graph structure to perform tasks like node classification, link prediction, and graph classification, achieving state-of-the-art performance in many applications.
+The field of GNNs has seen rapid growth, driven by advances in machine learning and the increasing availability of graph data. Key milestones in the development of GNNs include the introduction of Graph Convolutional Networks (GCNs), Graph Attention Networks (GATs), and various other architectures that have expanded the capabilities and applications of GNNs.
+
+It is essential to understand the basic components of graph structures. Nodes, or vertices, represent entities within the graph, while edges denote the relationships or connections between these nodes. The adjacency matrix is a square matrix used to represent a graph. In this matrix, the element at row $i$ and column $j$ indicates the presence or weight of an edge between nodes $i$ and $j$. This foundational understanding of graph structures is crucial for comprehending how GNNs operate on graph-structured data.
+Graph data presents unique challenges that differ from traditional \verb+Euclidean data+\footnote{
+Euclidean data refers to data that exists within the Euclidean space. It is characterized by having a fixed and regular geometric structure. Examples are images, where data points (pixels) are arranged in a regular grid, and each pixel has a fixed position relative to others and tabular data, where entries are organized in rows and columns within a fixed structure.
+}. One primary challenge is its non-Euclidean nature, as graphs lack a fixed geometric structure, making it difficult to apply traditional convolutional neural network (CNN) operations. Additionally, graphs exhibit irregularity, where nodes can have varying numbers of neighbors, unlike pixels in an image which have a fixed number of neighboring pixels. Furthermore, the features of a node in a graph depend not only on the node itself but also on its neighbors and their connections, adding a layer of complexity to the learning process.
+
+In Graph Neural Networks, fundamental operations are crucial for processing graph data. Message passing enables nodes to exchange information with their neighbors, involving the aggregation of features and subsequent updates to node representations. Aggregation is then employed to combine neighboring node features through operations like mean, sum, or max. Finally, nodes update their representations based on the aggregated information. These operations, although independent, collectively empower GNNs to effectively analyze and process graph data.
+
+Training approaches for Graph Neural Networks encompass diverse methodologies designed for distinct learning paradigms. \cite{DBLP:journals/corr/abs-1812-08434} In supervised learning, GNNs tackle tasks such as node classification, edge prediction, and graph classification. Node classification involves assigning labels to nodes based on their features and connections within the graph. Edge prediction focuses on predicting the existence or properties of edges between nodes. Graph classification aims to classify entire graphs based on their structural and feature characteristics.
+
+In unsupervised learning, GNNs leverage techniques like graph autoencoders and contrastive learning. Graph autoencoders aim to learn meaningful representations of graphs by reconstructing them from compressed embeddings. Contrastive learning involves training the model to distinguish between positive and negative samples, enhancing its ability to capture meaningful patterns in the data.
+
+Semi-supervised learning techniques in GNNs integrate both labeled and unlabeled data to improve performance. By leveraging a combination of labeled data, where nodes or graphs have known labels, and unlabeled data, where labels are absent, semi-supervised learning enables GNNs to generalize better and make predictions on unseen data. \cite{DBLP:journals/corr/KipfW16} These strategies play a pivotal role in enhancing the adaptability and performance of GNNs across various tasks and datasets.
+
+GNNs have revolutionized the field of graph-based machine learning by enabling effective analysis and processing of complex graph-structured data. One key aspect of these networks is node embedding, a technique that involves representing nodes in a graph as low-dimensional vectors in a continuous vector space. Node embedding is crucial for capturing the structural and semantic relationships between nodes, allowing GNNs to learn meaningful representations of graph elements. By leveraging node embedding, the network can perform various tasks such as node classification, link prediction, and community detection with improved accuracy and efficiency. This capability to encode graph structures into vector representations enables GNNs to generalize to unseen data and handle large-scale graph datasets, making them a powerful tool for tasks ranging from social network analysis to drug discovery and recommendation systems.
+
 
 \section{Motivation for representation learning}
 %----------------------------------------------------------------------------
-TODO [1 oldal]
 
-gépi tanulási modellek alkalmazhatóságát akarjuk - tabuláris adat kell
+In the realm of graph-structured data, the motivation for representation learning lies in the extraction of inner representations in a latent space. These representations serve as compact, semantically rich encodings of the underlying graph structure, enabling their utilization as input to various machine learning algorithms. The key motivations for pursuing such representations are as follows: \cite{DBLP:journals/corr/abs-1709-05584}
 
-gráf strukturális felépítése is fontos információ
+\begin{itemize}
+
+    \item \emph{Feature Engineering Simplification:} representation learning alleviates the need for manual feature engineering by automatically generating meaningful representations directly from the graph data. This simplification accelerates the model development process and enhances the scalability of graph-based machine learning tasks.
+
+    \item \emph{Enhanced Generalization:} inner representations in a latent space facilitate enhanced generalization of learned patterns and relationships within the graph data. By capturing the essential characteristics of nodes and edges, these representations enable models to make accurate predictions on unseen data and generalize effectively across diverse tasks.
+
+    \item \emph{Interpretability and Visualization:} the learned representations offer insights into the underlying structure of the graph, enhancing interpretability and enabling intuitive visualization of complex relationships between entities. By mapping nodes to points in a low-dimensional latent space, the inner representations reveal clusters, communities, and structural similarities within the graph.
+
+    \item \emph{Integration with Machine Learning Algorithms:} the compact nature of inner representations makes them ideal inputs for various machine learning algorithms. Whether for classification, regression, or clustering tasks, these representations provide a concise yet informative representation of the graph data, facilitating seamless integration with existing machine learning pipelines.
+
+    \item \emph{Scalability and Efficiency:} representation learning techniques often exhibit scalability and computational efficiency, enabling the analysis of large-scale graph datasets in real-time or near real-time. This scalability is essential for applications across diverse domains, from social network analysis to recommendation systems and beyond.
+
+\end{itemize}
+
+In essence, the motivation for representation learning in the context of graph-structured data centers on the extraction of inner representations in a latent space. When learning representation, an important goal is to produce tabular, low-dimensional embeddings that allow us to infer the structure of the original graph without losing information about it. There are several known methods and algorithms for learning latent representations, two of the most common of which, DeepWalk and Node2Vec, are discussed in this thesis.
 
 \section{DeepWalk} 
 %----------------------------------------------------------------------------
