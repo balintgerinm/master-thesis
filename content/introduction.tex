@@ -2,12 +2,18 @@
 \chapter{\bevezetes}
 %----------------------------------------------------------------------------
 
-TODO BEVEZETÉS: [2-3 oldal]
+Graph-based representation learning has emerged as a cornerstone in the realm of machine learning and artificial intelligence, owing to its ability to effectively capture and interpret complex relationships inherent in graph-structured data. Among these techniques, Node2Vec stands out for its prowess in generating meaningful node embeddings. However, its applicability to dynamic graphs, where the structure evolves over time, remains a challenge. As such, this thesis is motivated by the imperative to enhance Node2Vec and similar methods to accommodate dynamic graph changes effectively. By introducing a novel encoder tailored to handle dynamic graph fluctuations, this research aims to advance the capabilities of graph-based representation learning. Such improvements not only address the challenges posed by dynamic graphs but also contribute to the broader objective of developing more robust and adaptable solutions for analyzing and understanding graph-structured data.
 
-- kiírás elemzése
+This new encoder is referenced Inductive Shallow Node Embedding (ISNE) in the literature, and most of my tasks were to implement it, perform measurements and prepare further research on it.
 
-- motiváció, korábbi megoldások
+In this thesis my tasks included presenting the literature on graph neural networks' representation, with particular emphasis on node representation learning. This involved reviewing existing research and summarizing key findings to establish a foundation for further exploration. I present two common methods, DeepWalk and Node2Vec. The second chapter is dedicated to this.
 
-- => saját megoldás
+I was tasked with utilizing a new encoder to further develop Node2Vec, one of the most well-known frameworks for representation learning on graphs. The objective was to enable the algorithm to solve inductive tasks and improve its overall performance. This required implementing the algorithm with the new encoder, involving coding and refining the implementation to ensure its effectiveness. An important aspect of the project was comparing the similarity of Node2Vec representations with the similarities achieved theoretically and with the new encoder. This involved conducting quantitative analyses and evaluating the results to assess the efficacy of the new encoder in enhancing representation similarity. The theoretical description of the new encoder, its motivation, and the comparison of the results with the conventional Node2Vec are discussed in the third chapter.
 
-- fejezetek bemutatása
+Furthermore, I was required to provide a solution for noise estimation on the representations and their similarities. This task involved devising algorithms and methodologies to accurately estimate noise levels in the representation space, contributing to the robustness and reliability of the representations. Chapter four provides the background and a description of the results measured.
+
+Additionally, I developed and implemented an algorithm to estimate the density of the learned representation space. This task required designing computational methods and conducting experiments to estimate the density distribution, providing valuable insights into the structure and characteristics of the representation space. The design of the algorithm and the results obtained using it are presented in chapter five. 
+
+I have devoted a separate chapter to examining the explicability of the classifiers learned on the embeddings produced. This is a human-centred AI aspect that is essential because of the spread and new regulation of AI. I discuss this in chapter six.
+
+Finally, I tested and measured the quality of the implemented solutions, assessing their performance and effectiveness. This involved conducting experiments, analyzing results, and identifying areas for improvement to refine the solutions further. After evaluating the solutions and completing the tasks, in chapter seven, I summarized my work, providing a comprehensive overview of the methodologies, findings, and implications of the research conducted throughout the project. 
